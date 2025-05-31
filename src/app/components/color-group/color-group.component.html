@@ -1,0 +1,21 @@
+<div class="d-flex">
+  @for (c of colorsGrouped; track $index) {
+  <!-- Imposta il colore di sfondo della box -->
+  <!-- Al click, chiama la funzione che emette l'evento al padre -->
+  <!-- Imposta classe selected in base alla proprietà active del colore-->
+  <div
+    [ngClass]="[getTextColor(c.hex), 'color-box', c.active ? 'selected' : '']"
+    [style.backgroundColor]="c.hex"
+    (click)="handleBoxClick(c)"
+  >
+    <div
+      class="color-info d-flex flex-column justify-content-center h-100 py-2"
+    >
+      <p>
+        <strong>{{ c.name }}</strong>
+      </p>
+      <p>{{ c.hex }}</p>
+    </div>
+  </div>
+  }
+</div>

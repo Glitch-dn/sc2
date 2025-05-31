@@ -1,0 +1,50 @@
+p{
+    font-size: small;
+    text-align: center;
+}
+.d-flex {
+  overflow: visible; /* Consente ai box di espandersi oltre il contenitore */
+}
+.light {
+    color: white;
+}
+.dark {
+    color: black;
+}
+  .color-box {
+    transition: width 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s, z-index 0.3s;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    height: 10rem;
+    width: 4rem;
+  }
+  .color-box:last-of-type{
+    border-radius: 0 20px 20px 0;
+  }
+  
+  .color-box .color-info {
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  
+  .color-box:hover {
+    width: 9rem !important; /* si espande in larghezza */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+  }
+  
+  .color-box:hover .color-info {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .color-box.selected {
+    width: 9rem !important; /* si espande in larghezza */
+    z-index: 2;
+  }
+.color-box.selected .color-info {
+    opacity: 1;
+    pointer-events: all;
+  }
