@@ -30,6 +30,5 @@ export class ColorContainerComponent implements OnInit {
     });
 
     navigator.clipboard.writeText(hex); // Copia il valore esadecimale negli appunti
-    console.log(hex); // Stampa il valore esadecimale nella console
   }
 }
